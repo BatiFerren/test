@@ -6,6 +6,7 @@ class MessagesController < ApplicationController
   def index
     #@messages = Message.all
     @messages = Message.all.order(:date_message).reverse_order
+    @message = Message.new
 #    @messages.each do |message|
 #	@new_comment = Comment.build_from(message, current_user.id, "")
 #	@comment = Comment.build_from(message, current_user.id, "")
@@ -45,8 +46,10 @@ class MessagesController < ApplicationController
 
     respond_to do |format|
       if @message.save
-        format.html { redirect_to @message, notice: 'Message was successfully created.' }
-        format.json { render :show, status: :created, location: @message }
+        #format.html { redirect_to @message, notice: 'Message was successfully created.' }
+        #format.json { render :show, status: :created, location: @message }
+        format.html { redirect_to '/messages', notice: 'Message was successfully created.' }
+        format.json { render :index, status: :created, location: @message }
       else
         format.html { render :new }
         format.json { render json: @message.errors, status: :unprocessable_entity }

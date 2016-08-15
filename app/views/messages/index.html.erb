@@ -1,14 +1,16 @@
 <!--<h1>Listing messages</h1>-->
 
 <% if user_signed_in? %>
+    
     <div class="main-message">
         <p>Hello, <%= current_user.email %></p>
-	<p>You can create a <%= link_to 'New Message', new_message_path %></p>
+	<p>You can create a New Message</p>
+	<%= render 'form' %>
 	<p>or <%= link_to 'Exit', destroy_user_session_path, :method => :delete %></p>
     </div>
 <% else %>
     <div class="main-message">
-	<p><%= link_to 'Enter', new_user_session_path %> or <%= link_to 'Register', new_user_registration_path %></p>
+	<p>You must <%= link_to 'Enter', new_user_session_path %> or <%= link_to 'Register', new_user_registration_path %> to leave a message</p>
     </div>
 <% end %>
 
@@ -26,9 +28,13 @@
       <tr class="<%= cycle('message_line_odd', 'message_line_even') %>">
         <td><%= message.date_message %></td>
         <td><%= message.text_message %></td>
-        <td class="message_actions"><%= link_to 'Show', message %>
-        <%= link_to 'Edit', edit_message_path(message) %>
-        <%= link_to 'Destroy', message, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td class="message_actions">
+        <% if user_signed_in? %>
+    	    <%= link_to 'Show', message %>
+    	    <%= link_to 'Edit', edit_message_path(message) %>
+    	    <%= link_to 'Destroy', message, method: :delete, data: { confirm: 'Are you sure?' } %>
+    	<% end %>
+    	</td>
       </tr>
       <tr></tr>
     <% end %>
