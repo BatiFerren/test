@@ -1,0 +1,45 @@
+// Place all the styles related to the Messages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.messages{
+    .main-message{
+	text-align: center !important;
+	a {
+	    font-weight: bolder;
+	}
+    }
+    table{
+	border-collapse: collapse;
+	width:100%;
+    }
+    table tr td{
+	padding: 0.5em;
+	vertical-align: top;
+    }
+    .message_actions{
+	font-size: x-small;
+	text-align: right;
+	padding-left: 1em;
+    }
+    .message_line_odd{
+	background: #e0f8f8;
+    }
+    .message_line_even{
+	background: #f8b0f8;
+    }
+    .show-message{
+	thead tr th{
+	    text-align: left;
+	    padding-left: 1em;
+	}
+	tr{
+	    background: #c0d8ff;
+	    th:first-of-type{
+		width: 15%;
+	    }
+	    td:first-of-type{
+		width: 15%;
+	    }
+	}
+    }
+}

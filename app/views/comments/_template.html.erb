@@ -1,0 +1,5 @@
+<%= render partial: "comments/form", locals: {new_comment: new_comment} %>
+
+<div class="commets-container">
+    <%= render partial: "comments/reply", locals: {comments: commentable.root_comments} %>
+</div>

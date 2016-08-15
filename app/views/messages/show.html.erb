@@ -1,0 +1,23 @@
+<!--<p id="notice"><%= notice %></p>-->
+
+<table class="show-message">
+    <thead>
+	<tr>
+	    <th>Date message:</th>
+	    <th>Text message:</th>
+	</tr>
+    </thead>
+    <tbody>
+	<tr>
+	    <td><%= @message.date_message %></td>
+	    <td><%= @message.text_message %></td>
+	</tr>
+    </tbody>
+</table>
+
+<% if user_signed_in? %>
+    <%= render partial: "comments/template", locals: {commentable: @message, new_comment: @comment} %>
+<% end %>
+
+<%= link_to 'Edit', edit_message_path(@message) %> |
+<%= link_to 'Back', messages_path %>
