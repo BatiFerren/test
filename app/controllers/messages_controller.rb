@@ -7,7 +7,7 @@ class MessagesController < ApplicationController
     #@messages = Message.all
     @messages = Message.all.order(:date_message).reverse_order
     @message = Message.new
-#    @messages.each do |message|
+##    @messages.each do |message|
 #	@new_comment = Comment.build_from(message, current_user.id, "")
 #	@comment = Comment.build_from(message, current_user.id, "")
 #    end
