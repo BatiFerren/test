@@ -14,32 +14,20 @@
     </div>
 <% end %>
 
-<table>
-  <thead>
-    <tr>
-      <th>Date message</th>
-      <th>Text message</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
     <% @messages.each do |message| %>
-      <tr class="<%= cycle('message_line_odd', 'message_line_even') %>">
-        <td><%= message.date_message %></td>
-        <td><%= message.text_message %></td>
-        <td class="message_actions">
+      <div class="<%= cycle('message_line_odd', 'message_line_even') %>"><p>
+        <span><%= message.date_message %></span>
+        <span><%= message.text_message %></span>
+        <span class="message_actions">
         <% if user_signed_in? %>
     	    <%= link_to 'Show', message %>
     	    <%= link_to 'Edit', edit_message_path(message) %>
     	    <%= link_to 'Destroy', message, method: :delete, data: { confirm: 'Are you sure?' } %>
     	<% end %>
-    	</td>
-      </tr>
-      <tr></tr>
+    	</span></p>
+      </div>
     <% end %>
-  </tbody>
-</table>
 
 <br>
 

@@ -1,19 +1,11 @@
 <!--<p id="notice"><%= notice %></p>-->
 
-<table class="show-message">
-    <thead>
-	<tr>
-	    <th>Date message:</th>
-	    <th>Text message:</th>
-	</tr>
-    </thead>
-    <tbody>
-	<tr>
-	    <td><%= @message.date_message %></td>
-	    <td><%= @message.text_message %></td>
-	</tr>
-    </tbody>
-</table>
+<div class="show-message">
+	<p>
+	    <span><%= @message.date_message %></td>
+	    <span><%= @message.text_message %></td>
+	</p>
+</div>
 
 <% if user_signed_in? %>
     <%= render partial: "comments/template", locals: {commentable: @message, new_comment: @comment} %>

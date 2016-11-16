@@ -42,7 +42,7 @@ class MessagesController < ApplicationController
     @message = Message.new(message_params)
 
     time = Time.new
-    @message.date_message = time.strftime("%Y-%m-%d %H:%M")
+    @message.date_message = time.strftime("%Y-%m-%d %H:%M:%S")
 
     respond_to do |format|
       if @message.save

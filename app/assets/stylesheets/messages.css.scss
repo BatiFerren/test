@@ -8,11 +8,16 @@
 	    font-weight: bolder;
 	}
     }
-    table{
+/*    table{
 	border-collapse: collapse;
 	width:100%;
+    }*/
+    div p{
+	padding: 0.5em;
+	vertical-align:top;
+	margin: 0;
     }
-    table tr td{
+    div p span{
 	padding: 0.5em;
 	vertical-align: top;
     }
@@ -28,18 +33,9 @@
 	background: #f8b0f8;
     }
     .show-message{
-	thead tr th{
-	    text-align: left;
-	    padding-left: 1em;
-	}
-	tr{
-	    background: #c0d8ff;
-	    th:first-of-type{
-		width: 15%;
-	    }
-	    td:first-of-type{
-		width: 15%;
-	    }
+	p{
+	    border-bottom: 1px solid #ccc;
+	    margin-bottom: 0.5em;
 	}
     }
 }
